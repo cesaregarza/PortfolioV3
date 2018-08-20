@@ -33,6 +33,7 @@ export class MasterService {
   ];
   currentpage = this.pages[0];
   maxpages = this.pages.length;
+  transition: String;
 
   indicator = new WheelIndicator({
     elem: window.document.querySelector('html'),
@@ -41,12 +42,12 @@ export class MasterService {
     }
   });
 
-  out(x) {
-    console.log(x);
+  getState(x){
+    return this.transition;
   }
 
-  getState(x){
-    return x.activatedRouteData.state;
+  animEnd(e){
+    this.transition = "none";
   }
 
   onscroll(e) {
@@ -58,11 +59,13 @@ export class MasterService {
       let next = this.pages[nxt];
       this.router.navigate([next.page]);
       this.currentpage = next;
+      this.transition = "plus";
     } else if (dir == "up") {
       let prv = (this.currentpage.id + this.maxpages - 2) % this.maxpages;
       let prev = this.pages[prv];
       this.router.navigate([prev.page]);
       this.currentpage = this.pages[prv];
+      this.transition = "minus";
     }
   }
 

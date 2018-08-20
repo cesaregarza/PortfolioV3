@@ -1,3 +1,3 @@
-<div [@routerTransition]="ms.getState(o)">
+<div [@routerTransition]="ms.getState(o)" (@routerTransition.done)="ms.animEnd($event)">
     <router-outlet #o="outlet"></router-outlet>
 </div>
