@@ -1,3 +1,3 @@
-<div [@routerTransition]="ms.getState(o)" (@routerTransition.done)="ms.animEnd($event)">
+<div [@routerTransition]="ms.getState(o)" (@routerTransition.start)="ms.animStart($event)" (@routerTransition.done)="ms.animEnd($event)" (keyup.arrowup)="ms.scrollUp()" (keyup.arrowdown)="ms.scrollDown()" (keyup.pgup)="ms.scrollUp()" (keyup.pgdn)="ms.scrollDown()">
     <router-outlet #o="outlet"></router-outlet>
 </div>
