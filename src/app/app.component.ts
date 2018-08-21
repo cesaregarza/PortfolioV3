@@ -14,7 +14,7 @@ import { routerTransition} from './common/animations';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
   animations: [ routerTransition ],
 })
 export class AppComponent {

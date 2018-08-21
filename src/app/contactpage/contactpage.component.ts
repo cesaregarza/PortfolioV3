@@ -4,7 +4,7 @@ import { MasterService } from '../master.service';
 @Component({
   selector: 'app-contactpage',
   templateUrl: './contactpage.component.html',
-  styleUrls: ['./contactpage.component.css']
+  styleUrls: ['./contactpage.component.scss']
 })
 export class ContactpageComponent implements OnInit {
 

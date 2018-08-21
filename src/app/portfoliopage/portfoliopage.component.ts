@@ -3,7 +3,7 @@ import { MasterService } from '../master.service';
 @Component({
   selector: 'app-portfoliopage',
   templateUrl: './portfoliopage.component.html',
-  styleUrls: ['./portfoliopage.component.css']
+  styleUrls: ['./portfoliopage.component.scss']
 })
 export class PortfoliopageComponent implements OnInit {
 

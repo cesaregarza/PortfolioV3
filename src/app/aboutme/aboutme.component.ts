@@ -4,7 +4,7 @@ import { MasterService } from '../master.service';
 @Component({
   selector: 'app-aboutme',
   templateUrl: './aboutme.component.html',
-  styleUrls: ['./aboutme.component.css']
+  styleUrls: ['./aboutme.component.scss']
 })
 export class AboutmeComponent implements OnInit {
 

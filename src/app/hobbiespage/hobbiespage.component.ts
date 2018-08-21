@@ -4,7 +4,7 @@ import { MasterService } from '../master.service';
 @Component({
   selector: 'app-hobbiespage',
   templateUrl: './hobbiespage.component.html',
-  styleUrls: ['./hobbiespage.component.css']
+  styleUrls: ['./hobbiespage.component.scss']
 })
 export class HobbiespageComponent implements OnInit {
 
