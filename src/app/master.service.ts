@@ -24,7 +24,7 @@ export class MasterService {
   }
 
   pages = [
-    { id: 1, page: "/", state: "home"},
+    { id: 1, page: "/home", state: "home"},
     { id: 2, page: "/about", state: "about"},
     { id: 3, page: "/portfolio", state: "portfolio"},
     { id: 4, page: "/skills", state: "skills"},
@@ -34,7 +34,7 @@ export class MasterService {
   currentpage = this.pages[0];
   maxpages = this.pages.length;
   transition: String;
-  blocked: Boolean;
+  blocked: number = 0;
 
   indicator = new WheelIndicator({
     elem: window.document.querySelector('html'),
@@ -48,12 +48,13 @@ export class MasterService {
   }
 
   animStart(e){
-    this.blocked = true;
+    this.blocked++;
   }
 
   animEnd(e){
+    console.log("animated end!");
     this.transition = "none";
-    this.blocked = false;
+    this.blocked = (this.blocked++)%2;
   }
 
   scrollDown(){
@@ -66,19 +67,23 @@ export class MasterService {
 
   onscroll(e) {
     let dir = e.direction;
+    console.log(`transition: ${this.transition} blocked: ${this.blocked}`);
 
     if (dir == "down" && !this.blocked){
+      console.log(`activated!`);
       let nxt = this.currentpage.id % this.maxpages;
       let next = this.pages[nxt];
       this.router.navigate([next.page]);
       this.currentpage = next;
       this.transition = "plus";
+      console.log(this.transition);
     } else if (dir == "up" && !this.blocked) {
       let prv = (this.currentpage.id + this.maxpages - 2) % this.maxpages;
       let prev = this.pages[prv];
       this.router.navigate([prev.page]);
       this.currentpage = this.pages[prv];
       this.transition = "minus";
+      console.log(this.transition);
     }
   }
 

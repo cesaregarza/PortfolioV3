@@ -11,7 +11,7 @@ import { SkillspageComponent } from './skillspage/skillspage.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: "home",
     component: HomepageComponent,
     data: { state: 'home'}
   },
@@ -42,7 +42,7 @@ const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "/",
+    redirectTo: "/home",
     pathMatch: "full"
   }
 ]

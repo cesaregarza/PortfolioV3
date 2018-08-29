@@ -13,7 +13,6 @@ export class HomepageComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log("Init!");
   }
 
 }
