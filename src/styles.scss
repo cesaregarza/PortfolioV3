@@ -10,3 +10,19 @@ body{
 p{
     margin: 0;
 }
+
+blockquote{
+    padding-left: 20px;
+    padding-right: 5px;
+
+    .author::before{
+        content: "-"
+    }
+    .author {
+        float: right;
+    }
+    .quote{
+        float: left;
+        width: 100%;
+    }
+}

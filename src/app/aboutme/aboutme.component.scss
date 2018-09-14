@@ -1,3 +1,46 @@
+@import "../common/sassImports";
+
 .bigbox{
-    background: #BBB
+    background: colorScheme(true);
+}
+
+.aboutmecontainer{
+    width: 95vw;
+}
+
+h3 {
+    color: colorScheme(false);
+}
+
+.profile, .infobox {
+    width: 100%;
+
+    @include md-query {
+        width: 47.5%;
+    }
+}
+
+.profile {
+    img {
+        width: 100%;
+        height: 100%;
+        max-height: 70vh;
+        object-fit: cover;
+    }
+}
+
+.infobox {
+    max-height: 40vh;
+    overflow: scroll;
+    color: colorScheme(false);
+}
+
+blockquote{
+    @if $invert {
+        border-left: 2px solid darken($light, 50%);
+        background-color: lighten($dark, 10%);
+    } @else {
+        border-left: 2px solid lighten($dark, 50%);
+        background-color: darken($light, 10%);
+    }
 }

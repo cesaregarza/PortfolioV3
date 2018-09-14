@@ -1,0 +1,13 @@
+@import "variableDeclarations";
+
+@function colorScheme($primary){
+    @if xor($invert, $primary){
+        @return $light;
+    } @else {
+        @return $dark;
+    }
+}
+
+@function xor ($a, $b){
+    @return (($a and not $b) or (not $a and $b));
+}

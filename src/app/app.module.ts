@@ -10,6 +10,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { PortfoliopageComponent } from './portfoliopage/portfoliopage.component';
 import { SkillspageComponent } from './skillspage/skillspage.component';
 import { RoutingModule } from './/routing.module';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RoutingModule } from './/routing.module';
     HobbiespageComponent,
     HomepageComponent,
     PortfoliopageComponent,
-    SkillspageComponent
+    SkillspageComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

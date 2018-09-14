@@ -1,0 +1,46 @@
+@import "/variableDeclarations";
+
+
+//queries
+@mixin xs-query {
+    @media (max-width: #{$bootstrap-sm - 1 px}) {
+        @content;
+    }
+}
+@mixin sm-query {
+    @media (min-width: #{$bootstrap-sm}) {
+        @content;
+    }
+}
+@mixin md-query {
+    @media (min-width: #{$bootstrap-md}) {
+        @content;
+    }
+}
+@mixin lg-query {
+    @media (min-width: #{$bootstrap-lg}) {
+        @content;
+    }
+}
+@mixin xl-query {
+    @media (min-width: #{$bootstrap-xl}) {
+        @content;
+    }
+}
+
+//Exclusive queries
+@mixin x-sm-query {
+    @media (min-width: #{$bootstrap-sm}) and (max-width: #{$bootstrap-md - 1px}) {
+        @content;
+    }
+}
+@mixin x-md-query {
+    @media (min-width: #{$bootstrap-md}) and (max-width: #{$bootstrap-lg - 1px}) {
+        @content;
+    }
+}
+@mixin x-lg-query {
+    @media (min-width: #{$bootstrap-lg}) and (max-width: #{$bootstrap-xl - 1px}){
+        @content;
+    }
+}
