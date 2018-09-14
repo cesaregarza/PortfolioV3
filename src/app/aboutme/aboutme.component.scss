@@ -36,11 +36,21 @@ h3 {
 }
 
 blockquote{
-    @if $invert {
-        border-left: 2px solid darken($light, 50%);
-        background-color: lighten($dark, 10%);
-    } @else {
-        border-left: 2px solid lighten($dark, 50%);
-        background-color: darken($light, 10%);
+    border-left: 2px solid reversen(true, 50%);
+    background-color: reversen(false, 10%);
+    z-index: 600;
+    @include text-stroke(1, colorScheme(true), 0);
+
+    .quote::before {
+        z-index: -300;
+        content: '\201C';
+        top: -.3em;
+        left: -.1em;    
+        color: colorScheme(false);
+        opacity: .5;
+        position: absolute;
+        font-family: Georgia, serif;
+        font-size: 5em;
+        font-weight: 700;
     }
 }

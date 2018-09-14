@@ -1,5 +1,18 @@
 @import "variableDeclarations";
 
+/*Identify which color to use using XOR. $primary is a boolean asking the user if they want to find the primary color or the secondary color. In this case, the primary color is the background color and secondary color is the text color. This uses an XOR because of the following four cases:
+
+-------------------------------
+| Inverted | Primary | Output |
+-------------------------------
+| True     | True    | Dark   |
+| True     | False   | Light  |
+| False    | True    | Light  |
+| False    | False   | Dark   |
+-------------------------------
+
+As such, an XOR is ideal.
+*/
 @function colorScheme($primary){
     @if xor($invert, $primary){
         @return $light;
@@ -8,6 +21,16 @@
     }
 }
 
+//Similar to above, but with darken/lighten. Hence reversen since it can be either.
+@function reversen($primary, $percent){
+    @if xor($invert, $primary){
+        @return lighten($dark, $percent);
+    } @else {
+        @return darken($light, $percent);
+    }
+}
+
+//basic logic function XOR
 @function xor ($a, $b){
     @return (($a and not $b) or (not $a and $b));
 }
