@@ -67,23 +67,19 @@ export class MasterService {
 
   onscroll(e) {
     let dir = e.direction;
-    console.log(`transition: ${this.transition} blocked: ${this.blocked}`);
 
     if (dir == "down" && !this.blocked){
-      console.log(`activated!`);
       let nxt = this.currentpage.id % this.maxpages;
       let next = this.pages[nxt];
       this.router.navigate([next.page]);
       this.currentpage = next;
       this.transition = "plus";
-      console.log(this.transition);
     } else if (dir == "up" && !this.blocked) {
       let prv = (this.currentpage.id + this.maxpages - 2) % this.maxpages;
       let prev = this.pages[prv];
       this.router.navigate([prev.page]);
       this.currentpage = this.pages[prv];
       this.transition = "minus";
-      console.log(this.transition);
     }
   }
 

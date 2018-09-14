@@ -31,7 +31,6 @@ h3 {
 
 .infobox {
     max-height: 40vh;
-    overflow: scroll;
     color: colorScheme(false);
 }
 
@@ -45,7 +44,7 @@ blockquote{
         z-index: -300;
         content: '\201C';
         top: -.3em;
-        left: -.1em;    
+        left: 0;    
         color: colorScheme(false);
         opacity: .5;
         position: absolute;
