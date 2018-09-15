@@ -35,6 +35,7 @@ export class MasterService {
   maxpages = this.pages.length;
   transition: String;
   blocked: number = 0;
+  breakpoints = {sm: 576, md: 768, lg: 992, xl: 1200};
 
   indicator = new WheelIndicator({
     elem: window.document.querySelector('html'),
@@ -80,6 +81,21 @@ export class MasterService {
       this.router.navigate([prev.page]);
       this.currentpage = this.pages[prv];
       this.transition = "minus";
+    }
+  }
+
+  //Check screen size, essentially do the same job as bootstrap and CSS. This is important so that ng-container and ngIf can be used in conjunction to allow it to keep working in a flexbox
+  checkScreenSize(breakpoint: "sm" | "md" | "lg" | "xl", type: "atLeast" | "atMost" | "between", betweens?: "md" | "lg" | "xl") {
+    type = type ? type : "atLeast";
+    let width = document.body.offsetWidth;
+    let x = this.breakpoints[breakpoint];
+    let y = {atLeast: ">=", atMost: "<=", between: ""};
+    let z = this.breakpoints[betweens];
+
+    if (betweens) {
+      return eval(x + "<=" + width + "<=" + z);
+    } else {
+      return eval (width + y[type] + x);
     }
   }
 
