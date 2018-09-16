@@ -1,8 +1,13 @@
 <div class="bigbox d-flex flex-row justify-content-center">
-  <div class="d-flex flex-column py-md-5 justify-content-start justify-content-md-between align-content-center aboutmecontainer">
-    <h3>About</h3>
+  <div #parentElem class="d-flex flex-column py-md-5 justify-content-start justify-content-md-between align-content-center aboutmecontainer">
+
+    <canvas #aCanvas id="aCanvas" width="100%" height = "100"></canvas>
+
     <div class="d-flex flex-column flex-md-row justify-content-md-between justify-content-center">
-      <div class="profile d-flex"><img src="/assets/profilepicture2.jpg" id="profile"/></div>
+      <div class="profile d-flex flex-row justify-content-center">
+        <img src="/assets/profilepicture2.jpg" id="profile"/>
+      </div>
+
       <div class="infobox d-flex flex-column justify-content-between">
 
         <blockquote>
@@ -13,7 +18,13 @@
         <p>I'm a full-stack developer based in McAllen, Texas. I have a deep passion for problem-solving of all kinds; let's find solutions together.</p>
 
         <ng-container *ngIf="ms.checkScreenSize('md','atLeast')">
-          Test
+          <p>
+            I develop full-featured websites from the ground up. Need something more complicated than what wordpress can handle? Want to bring your ideas to life but don't know how? I can use my knowledge and experience to help make your vision a reality.
+          </p>
+
+          <p>
+            I'm currently a student at URGV studying Physics and have taken part of the school's chapter competing for the <span class="emphasis">National Student Advertisement Competition</span> as a copywriter and project manager. As a result, I have a great foundation and a very learning-oriented mindset towards development.
+          </p>
         </ng-container>
 
         

@@ -84,7 +84,9 @@ export class MasterService {
     }
   }
 
-  //Check screen size, essentially do the same job as bootstrap and CSS. This is important so that ng-container and ngIf can be used in conjunction to allow it to keep working in a flexbox
+  //Check screen size, essentially do the same job as bootstrap and CSS. This is important so that ng-container and ngIf can be used in conjunction to allow hiding elements based off of breakpoints while not affecting displays on a flex-box.
+  //INPUTS: (breakpoint, type, betweens?)
+  //OUTPUTS: boolean
   checkScreenSize(breakpoint: "sm" | "md" | "lg" | "xl", type: "atLeast" | "atMost" | "between", betweens?: "md" | "lg" | "xl") {
     type = type ? type : "atLeast";
     let width = document.body.offsetWidth;
