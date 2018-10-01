@@ -36,6 +36,32 @@ export class AboutmeComponent implements OnInit {
     ctx.font = "" + (canvasHeight * 0.8) + "px Arial"
     ctx.fillStyle = "white";
     ctx.fillText("About", 0, 0.8 * canvasHeight);
+
+    // function Circle(x,y,dx,dy,radius){
+    //   this.x = x;
+    //   this.y = y;
+    //   this.dx = dx;
+    //   this.dy = dy;
+    //   this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+    //   this.radius = radius;
+      
+    //   // Create function for animte circle
+      
+    //   this.update = function(){
+    //      if(this.x + this.radius > innerWidth || this.x - this.radius < 0){
+    //         this.dx = -this.dx;
+    //    }	
+   
+    //      if(this.y + this.radius > innerHeight || this.y - this.radius < 0){
+    //         this.dy = -this.dy;
+    //    }
+   
+    //      this.x += this.dx;
+    //      this.y += this.dy;
+   
+    //      this.draw();	  
+    //   }
+    // }
     
 
   }
